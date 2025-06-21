@@ -1,0 +1,75 @@
+body {
+
+    background-color: rgb(104, 184, 228);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center; // Centra el contenido principal horizontalmente
+    }
+
+
+
+
+.tareas__lista {
+  list-style: none; // Elimina los puntos por defecto de la lista
+  width: 20rem;
+}
+
+.tareas__lista li {
+  margin-top: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  display: inline-block;
+  background: violet;
+  padding-left: 10px;
+  color: rgb(91, 6, 91);
+  font-weight: bold;
+}
+
+.btn {
+    margin-left: 15px;
+    border-radius: 5px 5px;
+    padding: 5px 10px;
+    background-color: rgb(6, 109, 193);
+    color: white;
+    transition:all 0.5s; // Suaviza el cambio de color en hover
+
+}
+
+.btn.btn--eliminar {
+  background: rgb(228, 34, 228);
+  margin-left: 125px;
+}
+
+// Estilo específico para el botón de eliminar individual
+.btn.btn--eliminar:hover {
+  background-color: rgb(114, 21, 135);
+}
+
+// Cambia a verde cuando se pasa el mouse sobre el botón "Añadir"
+.btn.btn--anadir:hover {
+    background-color: green;
+}
+
+.tareas__titulo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 3px blue; // Agrega sombra al texto para hacerlo más visible
+  color: white;
+}
+
+.tareas__input {
+  border-radius: 5px;
+  border: white solid 1px;
+  padding: 5px;
+  background-color: rgb(240, 128, 173);
+  color: rgb(16, 20, 219);
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+// Estilo aplicado a las tareas marcadas como completadas
+li.marcado {
+  text-decoration: line-through;
+  color:red;
+  background-color: rgb(74, 18, 74);
+}
