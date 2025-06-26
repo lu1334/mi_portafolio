@@ -1,5 +1,6 @@
 // Importa un módulo externo que devuelve el elemento contador del DOM.
 import { Contador } from "./contador"
+import {capturarInputValor, crearListaLocalStorage, guardarListaLocalStorage, addTareasLocalStorage, mostrarTareasLocalStorage, estilosTareasDOM} from "./localstorage.js"
  
 // Crea el contador y una variable numérica para llevar el seguimiento de cuántas tareas hay.
 const contador = Contador()
@@ -15,13 +16,15 @@ const capturarTexto = ()=>{
 // Verifica que el input no esté vacío, luego crea un <li> con el texto ingresado y un botón de eliminar.
 // También asigna el evento al botón para que pueda eliminar la tarea correspondiente.
 const añadirTexto = ()=>{
-    const ul = document.querySelector("ul")
+    const ul = document.querySelector(".tareas__lista")
     const li = document.createElement("li")
+    li.classList.add("tareas__item")
     let input = document.querySelector("input")
     if(!input.value || input.value === " "){
         alert("Escriba una tarea") // Validación para evitar tareas vacías.
         return
     }else{
+        addTareasLocalStorage(capturarTexto())
         li.textContent = capturarTexto() // Asigna el texto al nuevo <li>
         ul.appendChild(li) // Agrega el <li> al <ul>
         const boton = botonEliminar() // Crea el botón de eliminar
@@ -67,7 +70,7 @@ const funcionEliminarTarea = ()=>{
     const divTareasContenedor = document.querySelector(".tareas__contenedor")
     const btnEliminarTodas = crearBtnEliminarTodasTareas()
     divTareasContenedor.appendChild(btnEliminarTodas)
-    btnEliminarTodas.addEventListener("click",btnEliminarTodasTareas)
+    btnEliminarTodas.addEventListener("click",EliminarTodasTareas)
 }
 
 // Crea el botón "Eliminar todas" con clases reutilizables.
@@ -80,8 +83,8 @@ const crearBtnEliminarTodasTareas = ()=>{
 
 // Función que elimina todas las tareas de la lista (<li>), sin eliminar el contenedor <ul>.
 // También reinicia el contador visual.
-const btnEliminarTodasTareas = ()=>{
-    const li = document.querySelectorAll("ul li")
+const EliminarTodasTareas = ()=>{
+    const li = document.querySelectorAll(".tareas__lista .tareas__item")
     li.forEach(item => {
         item.remove()
     });
@@ -97,5 +100,7 @@ const btnEliminarTodasTareas = ()=>{
 function main(){
     eventoAgregar()
     funcionEliminarTarea()
+    mostrarTareasLocalStorage()
+    // estilosTareasDOM()
 }
 export {main}
