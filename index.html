@@ -1,35 +1,24 @@
-async function enviarDatos() {
-    if (!nombreValor || !trabajoValor) {
-        alert("Ambos campos son obligatorios")
-        return
-    }
-
-    try {
-        console.log("Voy a enviar:", { name: nombreValor, job: trabajoValor })
-
-        const respuesta = await fetch("https://reqres.in/api/users", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name: nombreValor, job: trabajoValor })
-        })
-
-        if (!respuesta.ok) {
-            throw new Error(`Error del servidor: ${respuesta.status}`)
-        }
-
-        const respuestaJson = await respuesta.json()
-
-        console.log("Respuesta del servidor:", respuestaJson)
-
-        const p = document.createElement("p")
-        p.textContent = `nombre: ${nombreValor}, trabajo: ${trabajoValor}`
-        form.appendChild(p)
-
-        inputNombre.value = ""
-        inputTrabajo.value = ""
-
-    } catch (error) {
-        console.error("Ocurrió un error:", error)
-        alert("Algo falló al enviar los datos. Revisá la consola.")
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mi portafolio</title>
+</head>
+<body>
+    <header>
+        <h1>Sandy Andrial | Desarrollador Web</h1>
+        <p>Bienvenido a mi portafolio. Aquí encontrarás algunos de mis proyectos personales hechos con HTML, CSS y JavaScript.</p>
+    </header>
+    <main>
+        <h2>Mis proyectos</h2>
+        <nav>
+            <ul>
+               <li><a href="./tareas_build/index.html">Lista de tareas</a></li>
+            </ul>
+        </nav>
+    </main>
+    
+</body>
+</html>
