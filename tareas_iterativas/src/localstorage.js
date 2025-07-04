@@ -1,22 +1,22 @@
 // Se crea una única vez el contenedor principal donde se mostrarán las tareas del localStorage
 const divLocalStorage = document.createElement("div")
-divLocalStorage.classList.add("localStore__wrapper") // BEM: bloque contenedor de la sección localStorage
+// divLocalStorage.classList.add("localStore__wrapper") // BEM: bloque contenedor de la sección localStorage
 
 // Se crea una única vez la lista <ul> donde se insertarán los <li> con las tareas
 const ulLocalStorage = document.createElement("ul")
-ulLocalStorage.classList.add("localStore__items") // BEM: elemento que contiene los ítems individuales
+// ulLocalStorage.classList.add("localStore__items") // BEM: elemento que contiene los ítems individuales
 
 // Función que crea un elemento <li> con su clase y lo devuelve.
 // Este será usado para representar una tarea en el DOM.
 const liLocalStorage = ()=>{
     const li = document.createElement("li")
-    li.classList.add("localStorage__item") // BEM: cada tarea individual en la lista
+    // li.classList.add("localStorage__item") // BEM: cada tarea individual en la lista
     return li
 }
 
 const botonLocalStorage = ()=>{
    const boton =  document.createElement("button")
-   boton.classList.add("localStorage--eliminar")
+//    boton.classList.add("localStorage--eliminar")
    boton.textContent = "Eliminar"
    return boton
 }
@@ -85,12 +85,7 @@ const  pintarTareaEnDOM = ()=>{
 
     const li = liLocalStorage()  // Crea un nuevo <li> para la tarea
     estilosTareasDOM(li)
-
-    // const boton = botonLocalStorage()// Aplica estilos al <li> 
-    // estilosTareasDOM(boton)                      
-    // li.appendChild(boton)
-
-    
+ 
     ulLocalStorage.appendChild(li)                  // Inserta el <li> en el <ul>
     divLocalStorage.appendChild(ulLocalStorage)     // Asegura que el <ul> esté dentro del <div>
 
@@ -105,31 +100,18 @@ const  pintarTareaEnDOM = ()=>{
 // Usa condicionales para evitar aplicar estilos incorrectos.
 const estilosTareasDOM = (elemento)=>{
    if(elemento.tagName === "DIV"){
-    elemento.style.height = "120px"
-    elemento.style.overflow = "scroll"
-    elemento.style.border = "1px solid blue"
-    elemento.style.backgroundColor = "gray"
-    elemento.style.marginBottom = "5px"
-    elemento.style.textAlign = "center"  
+    elemento.classList.add("localStorage__wrapper")
+     
    }
    if(elemento.tagName === "UL"){
-    elemento.style.listStyle = "none"
+    elemento.classList.add("localStorage__items")
+    
    }
    if(elemento.tagName === "LI"){
-    elemento.style.color = "white"
-    elemento.style.fontFamily = "Arial, Helvetica, sans-serif" // fuente correcta sin punto y coma
-    elemento.style.textShadow = "1px 1px red"
+    elemento.classList.add("localStorage__item")
    }
    if(elemento.tagName=== "BUTTON"){
-
-    elemento.style.fontSize = "0.8rem"
-    elemento.style.borderRadius = "5px"
-    elemento.style.padding = "5px"
-    elemento.style.background = "red"
-    elemento.style.color = "white"
-    elemento.style.marginLeft = "15px"
-    elemento.style.marginBottom = "5px"
-    elemento.style.marginTop = "5px"
+    elemento.classList.add("localStorage--eliminar")
    }
 }
 

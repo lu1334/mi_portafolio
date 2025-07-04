@@ -1,0 +1,33 @@
+.localStorage__wrapper{
+    height : 120px;
+    overflow : scroll;
+    border : 1px solid blue;
+    background-color : gray;
+    margin-bottom : 5px;
+    text-align : center;
+}
+
+.localStorage__items {
+
+    list-style :none;
+
+}
+
+.localStorage__item {
+    color : white;
+    font-family: "Arial ,Helvetica ,sans-serif"; // fuente correcta sin punto y coma
+    text-shadow: 1px 1px red;
+}
+
+.localStorage--eliminar{ 
+
+    font-size:  0.8rem;
+    border-radius:5px;
+    padding:5px;
+    background :red;
+    color:white;
+    margin-left :15px;
+    margin-bottom :5px;
+    margin-top :5px;
+   
+}
