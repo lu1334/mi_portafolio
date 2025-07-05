@@ -52,6 +52,7 @@ const añadirTexto = ()=>{
 const botonEliminar = ()=>{
     const btnEliminar = document.createElement("button")
     btnEliminar.classList.add("btn","btn--eliminar")
+    btnEliminar.style.ariaLabel = "Eliminar tarea"
     btnEliminar.textContent = "Eliminar" 
     return btnEliminar
 }

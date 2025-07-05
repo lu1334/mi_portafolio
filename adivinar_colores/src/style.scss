@@ -1,0 +1,5 @@
+
+@use '' as *;
+.prueba {
+    @include pieza;
+}
