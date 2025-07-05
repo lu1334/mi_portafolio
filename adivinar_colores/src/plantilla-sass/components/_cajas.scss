@@ -1,0 +1,17 @@
+.contenedor {
+      display: grid;
+      grid-template-columns: repeat(6, 80px);
+      grid-template-rows: repeat(5, 80px);
+      gap: 10px;
+      margin: 50px auto;
+      width: max-content;
+    }
+
+    .caja {
+      width: 80px;
+      height: 80px;
+      background-color: black;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }

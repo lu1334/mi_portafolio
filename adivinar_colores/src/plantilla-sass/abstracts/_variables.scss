@@ -1,7 +1,0 @@
-@use './plantilla-sass/abstracts/mixins' as *;
-
-.prueba {
-  @include pieza {
-    font-size: 20px;
-  }
-}

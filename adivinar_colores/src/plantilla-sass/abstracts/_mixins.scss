@@ -1,7 +1,0 @@
-@mixin pieza {
-  width: 100px;
-  height: 100px;
-  background: black;
-  color: white;
-  @content;
-}

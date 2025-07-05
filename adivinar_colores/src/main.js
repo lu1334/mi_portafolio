@@ -1,8 +1,7 @@
-import './style.scss'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import "./style.scss"
 
+import { inicializarJuego } from './logicaJuego.js'
+import { coloresContenedor } from './colores.js'
 
-
-setupCounter(document.querySelector('#counter'))
+const cajasDiv = document.querySelectorAll(".caja")
+inicializarJuego(cajasDiv, coloresContenedor)
